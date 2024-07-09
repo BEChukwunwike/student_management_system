@@ -5,8 +5,8 @@ from django.core.exceptions import ValidationError
 # Create your models here.
 class User(AbstractUser):
     is_student = models.BooleanField(default=False)
-    is_teacher = models.BooleanField(default=False)
-    is_parent = models.BooleanField(default=False)
+    is_lecturer = models.BooleanField(default=False)
+    is_admin = models.BooleanField(default=False)
     
     def clean(self):
         super().clean()

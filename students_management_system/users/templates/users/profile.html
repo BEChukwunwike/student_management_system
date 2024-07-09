@@ -5,11 +5,9 @@
 </head>
 <body>
     <h1>Profile</h1>
-    <p>Username: {{ user.username }}</p>
+    <p>Welcome, {{ user.username }}!</p>
     <p>Email: {{ user.email }}</p>
-    <p>Is Student: {{ user.is_student }}</p>
-    <p>Is Teacher: {{ user.is_teacher }}</p>
-    <p>Is Parent: {{ user.is_parent }}</p>
+    <p>Role: {% if user.is_student %}Student{% elif user.is_admin %}Admin{% elif user.is_lecturer %}Lecturer{% endif %}</p>
     <a href="{% url 'logout' %}">Logout</a>
 </body>
 </html>
